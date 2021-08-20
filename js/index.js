@@ -3,15 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const DARK = 'dark-theme';
     let theme = LIGHT;
 
-    function cloneCanvas(oldCanvas) {
-        const newCanvas = document.createElement('canvas');
-        const context = newCanvas.getContext('2d');
-        newCanvas.width = oldCanvas.width;
-        newCanvas.height = oldCanvas.height;
-        context.drawImage(oldCanvas, 0, 0);
-        return newCanvas;
-    }
-
     function cutCircle(context, x, y, radius) {
         context.globalCompositeOperation = 'destination-out';
         context.arc(x, y, radius, 0, Math.PI * 2, true);
@@ -20,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function work(canvas, x, y) {
         const context = canvas.getContext('2d');
+        context.beginPath();
         let radius = 0;
         const interval = setInterval(() => {
             radius += 10;
@@ -37,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
         theme = theme === LIGHT ? DARK : LIGHT;
 
         html2canvas(document.body).then(canvas => {
-            canvas = cloneCanvas(canvas); // Использование старого canvas ведет к проблемам с анимацией.
             const canvasStyle = {
                 position: 'absolute',
                 left: 0,
