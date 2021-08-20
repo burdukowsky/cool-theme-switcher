@@ -1,0 +1,99 @@
+@font-face {
+    font-family: Boycott;
+    src: url('fonts/boycott/boycott.eot');
+    src: url('fonts/boycott/boycott.eot?#iefix') format('embedded-opentype'),
+    url('fonts/boycott/boycott.woff2') format('woff2'),
+    url('fonts/boycott/boycott.woff') format('woff'),
+    url('fonts/boycott/boycott.ttf') format('truetype');
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-size: 16px;
+}
+
+body {
+    font-family: Boycott, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+.btn {
+    border: none;
+    font-family: inherit;
+    border-radius: 4px;
+    font-size: inherit;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.btn:active {
+    margin-top: 2px;
+    margin-bottom: -2px;
+}
+
+body.dark-theme {
+    background-color: #37474f;
+    color: #eceff1;
+}
+
+body.light-theme {
+    background-color: #eceff1;
+    color: #37474f;
+}
+
+body.dark-theme .btn {
+    background-color: #eceff1;
+    color: #37474f;
+}
+
+body.light-theme .btn {
+    background-color: #37474f;
+    color: #eceff1;
+}
+
+.content {
+    text-align: center;
+    padding: 2em;
+}
