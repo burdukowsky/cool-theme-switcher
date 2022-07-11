@@ -111,11 +111,6 @@ body {
     padding: 2em;
 }
 
-@keyframes page-animation {
-    0% { clip-path: circle(0%); }
-    100% { clip-path: circle(75%); }
-}
-
 .page-animation {
     animation: 500ms page-animation forwards;
 }
