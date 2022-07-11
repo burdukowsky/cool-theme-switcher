@@ -112,5 +112,5 @@ body {
 }
 
 .page-animation {
-    animation: 500ms page-animation forwards;
+    animation: 500ms page-animation forwards ease-in;
 }
