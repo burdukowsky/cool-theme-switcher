@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const switcher = document.getElementById('switcher');
     const page = document.getElementById('page');
     const pageAnimationClass = 'page-animation';
+    const pointerEventsNoneClass = 'pointer-events-none';
 
     const styleElement = document.createElement('style');
     document.head.appendChild(styleElement);
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     switcher.addEventListener('click', ({clientX, clientY}) => {
+        switcher.classList.add(pointerEventsNoneClass);
         theme = theme === LIGHT ? DARK : LIGHT;
         const {offsetWidth: pageWidth, offsetHeight: pageHeight} = page;
         const farthestX = (pageWidth / 2) > clientX ? pageWidth : 0;
@@ -37,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 canvas.remove();
                 page.classList.remove(pageAnimationClass);
                 styleElement.sheet.deleteRule(cssRuleIndex);
+                switcher.classList.remove(pointerEventsNoneClass);
             }, 500);
         });
     });

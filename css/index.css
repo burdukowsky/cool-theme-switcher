@@ -114,3 +114,7 @@ body {
 .page-animation {
     animation: 500ms page-animation forwards ease-in;
 }
+
+.pointer-events-none {
+    pointer-events: none;
+}
